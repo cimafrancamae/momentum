@@ -1,0 +1,466 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: none;
+     -moz-text-size-adjust: none;
+          text-size-adjust: none;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  --webkit-appearance: none;
+  border-radius: 0;
+}
+
+* ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+body ::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: -1;
+  /* From https://css.glass */
+  background: rgba(136, 125, 125, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(136, 125, 125, 0.3);
+}
+
+h1 {
+  font-size: 8rem;
+}
+
+h2 {
+  padding-top: 1rem;
+  font-size: 4vmin;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 3vmin;
+  font-weight: 600;
+  padding-top: 0.5rem;
+}
+
+blockquote {
+  font-size: 1rem;
+  text-align: center;
+}
+
+#top {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+#get-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 4rem;
+  text-align: center;
+  /* From https://css.glass */
+  background: rgba(136, 125, 125, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.3px);
+  -webkit-backdrop-filter: blur(5.3px);
+  border: 1px solid rgba(136, 125, 125, 0.3);
+}
+#get-name #user-name {
+  border: none;
+  border-bottom: 3px solid;
+  background-color: transparent;
+  outline: none;
+  width: 50%;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 4rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+#get-name #submit-name {
+  padding: 0.5rem 1.5rem;
+  border: 2px solid;
+  border-radius: 3rem;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#top-right {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+#top-right #weather {
+  display: flex;
+  flex-direction: column;
+}
+#top-right #weather #temperature {
+  font-weight: 700;
+}
+#top-right #weather #description {
+  text-transform: capitalize;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 65vh;
+  margin: 3rem auto;
+}
+
+#time-container {
+  text-align: center;
+  width: 70vmin;
+  padding: 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#focus-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+#focus-div #focus-input {
+  border: none;
+  border-bottom: 2px solid;
+  background-color: transparent;
+  outline: none;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#focus {
+  text-transform: capitalize;
+  font-size: 6vmin;
+  outline: none;
+  text-align: center;
+}
+
+#today {
+  font-weight: 600;
+}
+
+#focus-today {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  padding: 4rem 0;
+  gap: 1rem;
+}
+
+#bottom {
+  position: absolute;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 0;
+  padding: 1rem;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#setting {
+  cursor: pointer;
+}
+
+#quote-container {
+  max-width: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#quote-container #quote {
+  font-size: 2vmin;
+}
+
+#add-quote {
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+#quotes {
+  position: absolute;
+  width: 50vw;
+  height: 70vmin;
+  border-radius: 1rem;
+  background-color: white;
+  left: 1rem;
+  bottom: 10vmin;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  display: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 0.2rem #888;
+  background: rgba(255, 255, 255, 0.76);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+}
+
+#quotes.active {
+  display: flex;
+}
+
+#new-quote {
+  border: none;
+  border-bottom: 2px solid;
+  font-size: 3vmin;
+  outline: none;
+  width: 100%;
+  padding-top: 1vmin;
+  background-color: transparent;
+}
+
+#quotes-container {
+  height: 50vmin;
+  scroll-behavior: auto;
+  width: 100%;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+#quotes-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+#quotes-list li {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 2.1vmin;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+  border-bottom: 1.5px solid #333;
+}
+#quotes-list li div {
+  cursor: pointer;
+  padding-left: 1.3vmin;
+}
+
+.hidden {
+  display: none;
+}
+
+#todo {
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 0 1rem;
+}
+
+#todo:hover #todo-list {
+  display: flex;
+}
+
+#todo-list {
+  position: absolute;
+  width: 30vw;
+  height: 100vh;
+  padding: 1.5rem;
+  box-shadow: 0 0.2rem 0.1rem #F2DBC6;
+  right: -100%;
+  top: 0;
+  transition: 0.5s;
+  background: rgba(255, 255, 255, 0.76);
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  display: none;
+}
+
+#todo-title {
+  padding-top: 3rem;
+}
+
+.light {
+  background-color: #E2D595;
+  color: #333;
+}
+
+.dark {
+  background-color: #596182;
+  color: #fefefe;
+}
+
+#exit-todo {
+  display: block;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#todo-list.active {
+  right: 0;
+  display: block;
+}
+
+#new-todo {
+  border: 0;
+  border-bottom: 4px solid;
+  padding-top: 3rem;
+  padding-left: 1rem;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  font-size: 2.5vmin;
+  text-transform: capitalize;
+}
+
+#clear-todo {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  bottom: 1rem;
+  font-size: 2vmin;
+}
+#clear-todo #clear-all, #clear-todo #clear-complete {
+  cursor: pointer;
+}
+
+#todo-checkbox {
+  padding: 2rem 1rem;
+  height: 65vh;
+  overflow: auto;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+#todo-checkbox::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.todo-div {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.todo-div label {
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 2vmin;
+  outline: none;
+}
+.todo-div i {
+  padding-left: 1vmin;
+  font-size: 2vmin;
+  color: #333;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-right: 1rem;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}/*# sourceMappingURL=style.css.map */

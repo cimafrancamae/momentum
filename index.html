@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Momentum App</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <script type="module" src="./js/script.js" defer></script>
+</head>
+<body>
+
+    <div id="get-name">
+        <span>Hello, what's your name?</span>
+            <input type="text" id="user-name">
+            <button type="submit" id="submit-name">Continue ></button>
+    </div>
+
+    <div id="top">
+        <div id="top-left">
+            <span id="date"></span>
+        </div>
+        <div id="top-right">
+            <span id="weather-icon"></span>
+            <div id="weather">
+                <span id="temperature"></span>
+                <span id="description"></span>
+            </div>
+            <span id="location"></span>
+        </div>
+    </div>
+    
+    <div id="main">
+        <div id="time-container">
+            <h1 id="time"></h1>
+            <h2>
+                <span id="greeting"></span>
+                <span id="name-display"></span>
+            </h2>
+        </div>
+
+        <div id="focus-div">
+            <span>What is your main focus for today?</span>
+            <input type="text" id="focus-input">
+        </div>
+
+        <div id="focus-today">
+            <h3 id="today">Today</h3>
+            <h3 id="focus"></h3>
+        </div>
+        
+        
+    </div>
+
+    <div id="bottom">
+        <div>
+            <i id="add-quote" class="fa-solid fa-circle-plus fa-lg"></i>
+        </div>
+        <div id="quote-container">
+            <blockquote id="quote"></blockquote>
+        </div>
+        <div>
+            <i id="todo" class="fa-solid fa-list-check fa-lg"></i>
+        </div>
+    </div>
+
+    <!-- Hidden Containers -->
+    <div id="quotes">
+        <input id="new-quote" type="text" placeholder="Add Quote">
+        <h4>My Quotes:</h4>
+        <div id="quotes-container">
+            <ul id="quotes-list"></ul>
+        </div>
+    </div>
+
+    <div id="todo-list">
+        <i id="exit-todo" class="fa-regular fa-circle-xmark"></i>
+        <span id="todo-date"></span>
+        <h2 id="todo-title">Todo List</h2>
+
+        <form id="todo-form">
+            <input type="text" id="new-todo" placeholder="New Todo">
+            <div id="todo-checkbox"></div>
+        </form>
+        
+        <div id="clear-todo">
+            <span id="clear-all">Clear the day</span>
+            <span id="clear-complete">Clear completed tasks</span>
+        </div>
+    </div>
+    
+</body>
+</html>
