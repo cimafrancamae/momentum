@@ -26,7 +26,7 @@ export function getMainQuote(){
 export function showAllQuotes(){
     quotesList.innerHTML = ''
 
-    console.log('Local Storage Length: ', localStorage.length)
+    // console.log('Local Storage Length: ', localStorage.length)
 
     for(let i=0; i<localStorage.length; i++){
         const key = localStorage.key(i),
